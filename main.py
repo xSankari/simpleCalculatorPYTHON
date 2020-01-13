@@ -14,30 +14,28 @@ def divFoo(x,y):
 
 operationInput = int(input("Select an operation...\n1. Add\n2. Sub\n3. Mult\n4. Div\n5. Raise to a power\n6. Square root\nInput: "))
 
-firstNumber = int(input("Please enter your first number: "))
+if(operationInput in range(1,7)):
+        firstNumber = int(input("Please enter your first number: "))
+       
+        if(operationInput == 6):
+            print("Skipping... No second number needed.")
+            print("The square root of ", firstNumber, " is ",  math.sqrt(firstNumber))
+        else:
+            secondNumber = int(input("Please enter your second number: "))
+            if(operationInput == 1):
+                print(firstNumber, " + ", secondNumber, " = ", addFoo(firstNumber, secondNumber))
 
-if(operationInput == 6):
-    print("Skipping... No second number needed.")
-else:
-    secondNumber = int(input("Please enter your second number: "))
+            elif(operationInput == 2):
+                print(firstNumber, " - ", secondNumber, " = ", subFoo(firstNumber, secondNumber))
 
-if(operationInput == 1):
-    print(firstNumber, " + ", secondNumber, " = ", addFoo(firstNumber, secondNumber))
+            elif(operationInput == 3):
+                print(firstNumber, " * ", secondNumber, " = ", multFoo(firstNumber, secondNumber))
 
-elif(operationInput == 2):
-    print(firstNumber, " - ", secondNumber, " = ", subFoo(firstNumber, secondNumber))
+            elif(operationInput == 4):
+                print(firstNumber, " / ", secondNumber, " = ", divFoo(firstNumber, secondNumber))
 
-elif(operationInput == 3):
-    print(firstNumber, " * ", secondNumber, " = ", multFoo(firstNumber, secondNumber))
-
-elif(operationInput == 4):
-    print(firstNumber, " / ", secondNumber, " = ", divFoo(firstNumber, secondNumber))
-
-elif(operationInput == 5):
-    print(firstNumber, "^", secondNumber, " = ", math.pow(firstNumber, secondNumber))
-
-elif(operationInput == 6):
-    print("The square root of ", firstNumber, " is ",  math.sqrt(firstNumber))
-
+            elif(operationInput == 5):
+                print(firstNumber, "^", secondNumber, " = ", math.pow(firstNumber, secondNumber))
+            
 else:
     print("Incorrect input")
